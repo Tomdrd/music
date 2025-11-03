@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música HTML - Estrutura Básica</title>
+
+    <meta name="theme-color" content="#f5e6a8" id="meta-theme-color">
+    <meta property="og:image" content="imagens/logo-clara.webp" id="meta-og-image">
+
+    <!-- Ícone e Favicon -->
+<link rel="icon" type="image/webp" href="imagens/logo-clara.webp">
+<link rel="apple-touch-icon" href="imagens/logo-clara.webp">
+
+<!-- ====================== -->
+<!-- SEO BÁSICO (Google) -->
+<!-- ====================== -->
+<meta name="title" content="Música HTML - Estrutura Básica">
+<meta name="description" content="Uma música criada com IA sobre a estrutura básica do HTML. Descubra como o HTML é o esqueleto da web!">
+<meta name="author" content="Tom Rodrigues">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f5e6a8">
+
+<!-- ====================== -->
+<!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn, etc.) -->
+<!-- ====================== -->
+<meta property="og:title" content="Música HTML - Estrutura Básica">
+<meta property="og:description" content="Uma música criada com IA sobre a estrutura básica do HTML. Aprenda de forma divertida como a web começa!">
+<meta property="og:image" content="https://www.seusite.com/imagens/logo-clara.webp">
+<meta property="og:url" content="https://www.seusite.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<!-- ====================== -->
+<!-- TWITTER CARDS (X) -->
+<!-- ====================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Música HTML - Estrutura Básica">
+<meta name="twitter:description" content="Uma música criada com IA sobre a estrutura básica do HTML.">
+<meta name="twitter:image" content="https://www.seusite.com/imagens/logo-clara.webp">
+<meta name="twitter:creator" content="@seu_perfil">
+
+<!-- ====================== -->
+<!-- FAVICON E COMPATIBILIDADE -->
+<!-- ====================== -->
+<link rel="icon" sizes="32x32" href="imagens/logo-clara.webp" type="image/webp">
+<link rel="icon" sizes="192x192" href="imagens/logo-clara.webp" type="image/webp">
+<link rel="shortcut icon" href="imagens/logo-clara.webp" type="image/webp">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header id="main-header">
+
+<div class="logo">
+  <a href="index.html" aria-label="Ir para a página inicial">
+    <img id="logo" src="imagens/logo-clara.webp" alt="Logo">
+  </a>
+</div>    
+        <button id="menu-toggle" aria-label="Abrir menu de navegação">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="main-nav">
+            <a href="#home">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+            <button id="theme-switcher" aria-label="Alternar tema claro/escuro">
+                <i class="fas fa-sun"></i> </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <article id="musica-html">
+                          <h1>A Estrutura Básica</h1>
+            <figure class="capa">
+                <img src="imagens/ht.png" alt="Capa da Música HTML" />
+                <h2>Versão curta - Criado por IA</h2>
+            </figure>
+            
+            <section class="letra">
+                <div class="verso">
+                    <b>(Verso)</b>
+                    <p>
+                        O HTML é o esqueleto, do programador,<br>
+                        É o começo da web, com seu grande valor.<br>
+                        No bloco do <code>&lt;head&gt;</code> fica o que não se vê,<br>
+                        E no <code>&lt;body&gt;</code> é onde tudo vai acontecer.<br>
+                    </p>
+                </div>
+
+                <div class="refrao">
+                    <b>(Refrão)</b>
+                    <p>
+                        HTML é base, é o que faz tudo brilhar,<br>
+                        Com tag e semântica pra organizar.<br>
+                        Do título ao rodapé, tudo tem seu lugar,<br>
+                        Na teia da web, é só conectar.<br>
+                    </p>
+                </div>
+
+                <div class="verso-final">
+                    <b>(Verso final)</b>
+                    <p>
+                        A tag <code>&lt;a&gt;</code> te leva pra outro lugar,<br>
+                        E o <code>&lt;img&gt;</code> faz a tela brilhar.<br>
+                        O pilar da internet nunca vai falhar,<br>
+                        HTML é a base pra tudo começar!<br>
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <section id="video" class="iframe-youtube">
+            <h2>Vídeo da Música</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_TU_8eK-ZZ4?si=ZCW_z7kp8yyn74h-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="creditos">
+            Esta música foi criada com IA 
+            <a href="https://gemini.google.com/" target="_blank" class="link">Gemini</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

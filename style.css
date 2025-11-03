@@ -1,0 +1,248 @@
+/* Variáveis CSS para a simulação de textura de madeira */
+:root {
+    /* Tema Claro (Simulação de Madeira Clara Amarelada) */
+    --cor-fundo-principal: #f5e6a8; /* Amarelo claro/bege */
+    --cor-fundo-secundario: #e0d090; /* Tom mais escuro para cabeçalho/elementos */
+    --cor-texto-principal: #3e2723; /* Marrom escuro */
+    --cor-link: #ff7300;
+    --sombra-madeira: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    --fundo-textura: url('imagens/fundo.webp');
+}
+
+body.dark-mode {
+    /* Tema Escuro (Simulação de Madeira Escura) */
+    --cor-fundo-principal: #3a2e2a; /* Marrom escuro/Chocolate */
+    --cor-fundo-secundario: #2c221e; /* Tom mais escuro */
+    --cor-texto-principal: #f4e8c5; /* Creme claro */
+    --cor-link: #ff7300;
+    --sombra-madeira: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    --fundo-textura: url('imagens/fundo.webp');
+}
+
+/* Base e Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: var(--fundo-textura); /* Usa a variável que troca de imagem */
+    background-repeat: repeat; /* Repete a imagem em X e Y */
+    background-attachment: fixed; /* Fixa a imagem no viewport */
+    background-size: auto; /* Mantém o tamanho original do ladrilho da textura */   
+    background-color: var(--cor-fundo-principal);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto-principal);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    box-shadow: var(--sombra-madeira); /* Simulação da textura de madeira */
+    min-height: 100vh;
+}
+
+.logo {
+  border-radius: 30px;
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Estrutura Principal */
+.container {
+    max-width: 800px;
+    margin: 30px auto; /* Adicionei margem superior/inferior para separação */
+    padding: 20px;
+    
+    /* 🎨 DESTAQUE DO CONTAINER */
+    background-color: var(--cor-fundo-secundario); /* Fundo secundário */
+    border: 1px solid var(--cor-fundo-secundario); /* Borda sutil */
+    border-radius: 10px; /* Bordas arredondadas */
+    /* FIM DO DESTAQUE */
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-fundo-secundario);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Sticky Header */
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Menu de Navegação */
+#main-nav {
+    display: flex;
+    align-items: center;
+}
+
+#main-nav a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+#main-nav a:hover {
+    color: var(--cor-link);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Botão de alternância de tema */
+#theme-switcher, #menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--cor-texto-principal);
+    margin-left: 15px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#theme-switcher:hover, #menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do Conteúdo (Texto e Imagem) */
+h1 {
+    color: var(--cor-texto-principal);
+    margin: 10px 0;
+    text-align: center;
+    font-size: xx-large;
+}
+
+h2 {
+    color: var(--cor-texto-principal);
+    margin: 10px 0;
+    text-align: center;
+    font-size: large;
+}
+
+p, b {
+    color: var(--cor-texto-principal);
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 15px 0;
+}
+
+.capa {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.capa img {
+    max-width: 100%;
+    height: auto;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--cor-texto-principal);
+    margin-top: 10px;
+}
+
+/* Vídeo */
+.iframe-youtube {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.iframe-youtube iframe {
+    max-width: 100%;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-principal);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.creditos {
+    font-size: 0.9em;
+}
+
+.creditos a {
+    color: var(--cor-texto-principal);
+}
+.link {
+    color: var(--cor-link);
+    text-decoration: none;
+    font-weight: bold;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.iframe-youtube iframe {
+    max-width: 100%;
+    height: 315px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================== */
+/* MENU HAMBÚRGUER (Apenas em telas pequenas) */
+/* ==================================== */
+
+#menu-toggle {
+    display: none; /* Esconde o botão hambúrguer por padrão em desktop */
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block; /* Mostra o botão hambúrguer em telas pequenas */
+    }
+
+    #main-nav {
+        /* Configuração da "gaveta" */
+        position: fixed;
+        top: 60px; /* Abaixo do header */
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: var(--cor-fundo-secundario);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        transform: translateX(100%); /* Esconde a gaveta inicialmente */
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    #main-nav.open {
+        transform: translateX(0); /* Mostra a gaveta */
+    }
+
+    #main-nav a {
+        margin: 10px 0;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    #theme-switcher {
+        margin: 20px 0 10px 0;
+        /* Coloca o botão de tema no final do menu */
+    }
+}
