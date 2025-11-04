@@ -53,9 +53,8 @@ body {
 /* Estrutura Principal */
 .container {
     max-width: 800px;
-    margin: 30px auto; /* Adicionei margem superior/inferior para separação */
+    margin: 20px auto; /* Adicionei margem superior/inferior para separação */
     padding: 20px;
-    
     /* 🎨 DESTAQUE DO CONTAINER */
     background-color: var(--cor-fundo-secundario); /* Fundo secundário */
     border: 1px solid var(--cor-fundo-secundario); /* Borda sutil */
@@ -147,7 +146,7 @@ p, b {
     max-width: 100%;
     height: auto;
     width: 400px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -175,6 +174,10 @@ footer {
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+      bottom: -100px; /* começa escondido */
+  left: 0;
+  width: 100%;
 }
 
 /* Footer que aparece suavemente ao chegar no final */
@@ -559,21 +562,4 @@ input::-moz-focus-inner {
   border: 0 !important;
 }
 /* remove o quadro azul FIM */
-/* Estilo geral para botões e links que atuam como botões */
-.btn-primary, button[type="submit"] {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333; /* Cor de fundo (ajuste para o seu tema) */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    text-align: center;
-    text-decoration: none; /* Importante para o link <a> */
-    transition: background-color 0.3s ease;
-}
 
-.btn-primary:hover, button[type="submit"]:hover {
-    background-color: #555; /* Cor um pouco mais escura no hover */
-}
