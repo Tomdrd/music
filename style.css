@@ -547,7 +547,7 @@ section {
     .player-title {
         font-size: 0.9em;
     }
-<<<<<<< HEAD
+    
 }
 /* Remove outline e box-shadow ao focar ou clicar no logo - REMOVE O QUADRADO AZUL*/
 .logo:focus,
@@ -555,6 +555,4 @@ section {
   outline: none;
   box-shadow: none;
 }
-=======
-}
->>>>>>> 00355b994590ecd9015a86b2d4e5081a92897d1a
+
