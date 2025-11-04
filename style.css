@@ -430,3 +430,121 @@ section {
     font-size: 1em;
   }
 }
+
+/* ==================================== */
+/* CUSTOM PLAYER DE MÚSICA (Estilo Integrado) */
+/* ==================================== */
+
+.custom-audio-player {
+    /* Usa a cor de fundo secundária para integrar com a caixa do container */
+    background-color: var(--cor-fundo-principal); 
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto 30px auto; /* Centraliza e adiciona margem */
+    max-width: 90%;
+    /* Garante que o player use a cor de texto padrão */
+    color: var(--cor-texto-principal); 
+    border: 1px solid var(--cor-fundo-secundario);
+    transition: background-color 0.5s ease;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Informações da Faixa e Barra de Progresso */
+.track-info-area {
+    flex-grow: 1; /* Ocupa o espaço central disponível */
+}
+
+.player-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: var(--cor-texto-principal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Controles (Botões) */
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--cor-texto-principal); /* Cor principal do texto */
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+.control-btn:hover {
+    color: var(--cor-link); /* Cor de destaque (Laranja/Link) ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.05); /* Leve fundo no hover */
+}
+
+.play-pause-btn {
+    font-size: 1.8em;
+}
+
+/* Barra de Progresso */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time {
+    font-size: 0.75em;
+    color: var(--cor-texto-principal);
+    opacity: 0.8;
+}
+
+#seek-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--cor-fundo-secundario); /* Cor de fundo da barra */
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Estilizando o "thumb" (o círculo que você arrasta) */
+#seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cor-link); /* Cor de destaque para o indicador */
+    transition: background 0.2s ease;
+}
+
+#seek-bar:hover::-webkit-slider-thumb, #seek-bar:active::-webkit-slider-thumb {
+    background: #ff8b33; 
+    box-shadow: 0 0 5px rgba(255, 115, 0, 0.5);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    .player-controls {
+        gap: 10px;
+    }
+
+    .play-pause-btn {
+        font-size: 1.5em;
+    }
+
+    .control-btn {
+        font-size: 1em;
+    }
+
+    .player-title {
+        font-size: 0.9em;
+    }
+}

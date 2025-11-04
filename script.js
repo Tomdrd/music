@@ -167,3 +167,107 @@ window.addEventListener('scroll', () => {
   }
 });
 
+/* Substitua o bloco DOMContentLoaded antigo pelo seguinte no seu script.js */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('audio-player');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const seekSlider = document.getElementById('seek-bar');
+  const currentTimeContainer = document.getElementById('current-time');
+  const durationContainer = document.getElementById('duration');
+  const downloadBtn = document.getElementById('download-btn');
+  const icon = playPauseBtn ? playPauseBtn.querySelector('i') : null;
+
+  if (!audio || !playPauseBtn || !seekSlider || !icon) {
+      console.warn("Player de áudio não encontrado ou elementos essenciais ausentes.");
+      return; // Sai da função se os elementos não existirem
+  }
+  
+  // --- Funções de Ajuda ---
+
+  // Converte segundos para formato MM:SS
+  const formatTime = (secs) => {
+      const minutes = Math.floor(secs / 60);
+      const seconds = Math.floor(secs % 60);
+      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+  
+  // Atualiza a barra de progresso (a cor antes do thumb)
+  const updateSeekStyle = (value, max) => {
+      const percentage = (value / max) * 100;
+      // Define o background customizado para simular a cor "preenchida"
+      // Usa a variável CSS --cor-link para o preenchimento
+      seekSlider.style.background = `linear-gradient(to right, var(--cor-link) 0%, var(--cor-link) ${percentage}%, var(--cor-fundo-secundario) ${percentage}%, var(--cor-fundo-secundario) 100%)`;
+  }
+
+  // --- Event Listeners ---
+
+  // 1. Botão Play/Pause
+  playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+          audio.play();
+          icon.classList.replace('fa-play', 'fa-pause');
+      } else {
+          audio.pause();
+          icon.classList.replace('fa-pause', 'fa-play');
+      }
+  });
+
+  // 2. Quando o áudio pode ser reproduzido (metadados carregados)
+  audio.addEventListener('loadedmetadata', () => {
+      const duration = Math.floor(audio.duration);
+      // Define a duração máxima da barra
+      seekSlider.max = duration;
+      // Exibe a duração total
+      if (durationContainer) durationContainer.textContent = formatTime(duration);
+      // Inicializa o estilo da barra
+      updateSeekStyle(0, duration);
+  });
+
+  // 3. Atualiza o tempo e a barra enquanto a música toca
+  audio.addEventListener('timeupdate', () => {
+      const current = Math.floor(audio.currentTime);
+      // Atualiza o valor do input range
+      seekSlider.value = current;
+      // Atualiza o tempo atual na tela
+      if (currentTimeContainer) currentTimeContainer.textContent = formatTime(current);
+      // Atualiza o estilo da barra (progresso de cor)
+      updateSeekStyle(current, seekSlider.max);
+  });
+
+  // 4. Pular para um ponto específico (arrastando a barra)
+  seekSlider.addEventListener('input', () => {
+      // Atualiza o estilo da barra e o tempo enquanto o usuário arrasta
+      updateSeekStyle(seekSlider.value, seekSlider.max);
+      if (currentTimeContainer) currentTimeContainer.textContent = formatTime(seekSlider.value);
+  });
+
+  // Quando o usuário solta o "thumb" na barra de progresso
+  seekSlider.addEventListener('change', () => {
+      // Move o áudio para a nova posição
+      audio.currentTime = seekSlider.value;
+  });
+
+  // 5. Quando a música termina
+  audio.addEventListener('ended', () => {
+      icon.classList.replace('fa-pause', 'fa-play');
+      audio.currentTime = 0; // Volta para o início
+      seekSlider.value = 0;
+      updateSeekStyle(0, seekSlider.max);
+  });
+  
+  // 6. Download
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      // Previne que o clique dispare outros eventos no player
+      e.preventDefault(); 
+      
+      const link = document.createElement('a');
+      link.href = audio.src;
+      // Nome do arquivo para download. Você pode customizar!
+      link.download = 'musica-a-estrutura-basica.mp3'; 
+      link.click();
+    });
+  }
+
+});

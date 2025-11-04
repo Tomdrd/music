@@ -22,7 +22,7 @@
 <!-- ====================== -->
 <meta property="og:title" content="Música HTML - Estrutura Básica">
 <meta property="og:description" content="Uma música criada com IA sobre a estrutura básica do HTML. Aprenda de forma divertida como a web começa!">
-<meta property="og:image" content="https://i.imgur.com/qtxgfgA.png">
+<meta property="og:image" content="https://tomdrd.github.io/music/imagens/ht.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://tomdrd.github.io/music/">
@@ -60,7 +60,29 @@
                 <img src="imagens/ht.png" alt="Capa da Música HTML" />
                 <h2>Versão curta - Criado por IA</h2>
             </figure>
+            <!-- Player de Música -->
+            <div class="custom-audio-player">
+        <audio id="audio-player" src="musica.mp3"></audio>
+
+        <div class="player-controls">
+            <button id="play-pause-btn" class="control-btn play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
             
+            <div class="track-info-area">
+                <p id="player-title" class="player-title">A Estrutura Básica (IA)</p>
+                <div class="progress-container">
+                    <span id="current-time" class="time">0:00</span>
+                    <input type="range" id="seek-bar" value="0" step="1" max="100">
+                    <span id="duration" class="time">0:00</span>
+                </div>
+            </div>
+
+            <button id="download-btn" class="control-btn" title="Baixar Música">
+                <i class="fas fa-download"></i>
+            </button>
+        </div>
+    </div><!-- FIM Player de Música -->
             <section class="letra">
                 <div class="verso">
                     <b>(Verso)</b>
@@ -104,5 +126,7 @@
 <div id="footer-container"></div>
 
     <script src="script.js"></script>
+   
+
 </body>
 </html>
