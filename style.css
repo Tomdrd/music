@@ -549,10 +549,13 @@ section {
     }
     
 }
-/* Remove outline e box-shadow ao focar ou clicar no logo - REMOVE O QUADRADO AZUL*/
-.logo:focus,
-.logo:active {
-  outline: none;
-  box-shadow: none;
+/* remove o quadro azul INÍCIO */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0 !important;
+}
+/* remove o quadro azul FIM */
