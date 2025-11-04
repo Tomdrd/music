@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música HTML - Estrutura Básica</title>
+    <!-- Ícone e Favicon -->
+<link rel="icon" type="image/webp" href="imagens/logo-clara.webp">
+<link rel="apple-touch-icon" href="imagens/logo-clara.webp">
+
+<!-- ====================== -->
+<!-- SEO BÁSICO (Google) -->
+<!-- ====================== -->
+<meta name="title" content="Música HTML - Estrutura Básica">
+<meta name="description" content="Uma música criada com IA sobre a estrutura básica do HTML. Descubra como o HTML é o esqueleto da web!">
+<meta name="author" content="Tom Rodrigues">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f5e6a8">
+
+<!-- ====================== -->
+<!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn, etc.) -->
+<!-- ====================== -->
+<meta property="og:title" content="Música HTML - Estrutura Básica">
+<meta property="og:description" content="Uma música criada com IA sobre a estrutura básica do HTML. Aprenda de forma divertida como a web começa!">
+<meta property="og:image" content="https://tomdrd.github.io/music/imagens/ht.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://tomdrd.github.io/music">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<!-- ====================== -->
+<!-- FAVICON E COMPATIBILIDADE -->
+<!-- ====================== -->
+<link rel="icon" sizes="32x32" href="imagens/logo-clara.webp" type="image/webp">
+<link rel="icon" sizes="192x192" href="imagens/logo-clara.webp" type="image/webp">
+<link rel="shortcut icon" href="imagens/logo-clara.webp" type="image/webp">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div id="header-container"></div>
+
+    <main class="container">
+        
+        <article id="musica-html">
+                          <h1>A Estrutura Básica</h1>
+            <figure class="capa">
+                <img src="imagens/ht.png" alt="Capa da Música HTML" />
+                <h2>Versão curta - Criado por IA</h2>
+            </figure>
+            <!-- Player de Música -->
+            <div class="custom-audio-player">
+        <audio id="audio-player" src="musica.mp3"></audio>
+
+        <div class="player-controls">
+            <button id="play-pause-btn" class="control-btn play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            
+            <div class="track-info-area">
+                <p id="player-title" class="player-title">A Estrutura Básica (IA)</p>
+                <div class="progress-container">
+                    <span id="current-time" class="time">0:00</span>
+                    <input type="range" id="seek-bar" value="0" step="1" max="100">
+                    <span id="duration" class="time">0:00</span>
+                </div>
+            </div>
+
+            <button id="download-btn" class="control-btn" title="Baixar Música">
+                <i class="fas fa-download"></i>
+            </button>
+        </div>
+    </div><!-- FIM Player de Música -->
+            <section class="letra">
+                <div class="verso">
+                    <b>(Verso)</b>
+                    <p>
+                        O HTML é o esqueleto, do programador,<br>
+                        É o começo da web, com seu grande valor.<br>
+                        No bloco do <code>&lt;head&gt;</code> fica o que não se vê,<br>
+                        E no <code>&lt;body&gt;</code> é onde tudo vai acontecer.<br>
+                    </p>
+                </div>
+
+                <div class="refrao">
+                    <b>(Refrão)</b>
+                    <p>
+                        HTML é base, é o que faz tudo brilhar,<br>
+                        Com tag e semântica pra organizar.<br>
+                        Do título ao rodapé, tudo tem seu lugar,<br>
+                        Na teia da web, é só conectar.<br>
+                    </p>
+                </div>
+
+                <div class="verso-final">
+                    <b>(Verso final)</b>
+                    <p>
+                        A tag <code>&lt;a&gt;</code> te leva pra outro lugar,<br>
+                        E o <code>&lt;img&gt;</code> faz a tela brilhar.<br>
+                        O pilar da internet nunca vai falhar,<br>
+                        HTML é a base pra tudo começar!<br>
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <section id="video" class="iframe-youtube">
+            <h2>Vídeo da Música</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_TU_8eK-ZZ4?si=ZCW_z7kp8yyn74h-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        
+    </main>
+
+<div id="footer-container"></div>
+
+    <script src="script.js"></script>
+   
+
+</body>
+</html>
