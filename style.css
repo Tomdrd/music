@@ -177,6 +177,31 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer que aparece suavemente ao chegar no final */
+footer {
+  position: fixed;
+  bottom: -100px; /* começa escondido */
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-principal);
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 100;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Classe que mostra o footer */
+footer.visivel {
+  bottom: 0;
+  opacity: 1;
+}
+
+
+
 .creditos {
     font-size: 0.9em;
 }
@@ -245,4 +270,163 @@ footer {
         margin: 20px 0 10px 0;
         /* Coloca o botão de tema no final do menu */
     }
+}
+
+/* ==================================== */
+/* PÁGINA SOBRE */
+/* ==================================== */
+
+#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  background-color: var(--cor-fundo-principal);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sobre:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+#sobre h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--cor-texto-principal);
+}
+
+#sobre p {
+  max-width: 700px;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: var(--cor-texto-principal);
+}
+
+
+
+/* ==================================== */
+/* PÁGINA CONTATO */
+/* ==================================== */
+
+#contato {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--cor-fundo-principal);
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#contato:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+#contato h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--cor-texto-principal);
+}
+
+#form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#form-contato label {
+  text-align: left;
+  font-weight: bold;
+  color: var(--cor-texto-principal);
+}
+
+#form-contato input,
+#form-contato textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #b5a46a;
+  font-family: inherit;
+  font-size: 1em;
+  color: var(--cor-texto-principal);
+  background-color: var(--cor-fundo-secundario);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+  outline: none;
+  border-color: var(--cor-link);
+  box-shadow: 0 0 6px var(--cor-link);
+}
+
+#form-contato button {
+  background-color: var(--cor-link);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#form-contato button:hover {
+  background-color: #ff8b33;
+  transform: scale(1.02);
+}
+
+/* Mensagem de sucesso ou erro (Formspree) */
+#form-contato .status {
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+/* ==================================== */
+/* ANIMAÇÕES SUAVES */
+/* ==================================== */
+
+section {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================== */
+/* RESPONSIVIDADE */
+/* ==================================== */
+
+@media (max-width: 600px) {
+  #contato, #sobre {
+    padding: 20px;
+  }
+
+  #form-contato input,
+  #form-contato textarea {
+    font-size: 0.95em;
+  }
+
+  #form-contato button {
+    font-size: 1em;
+  }
 }
