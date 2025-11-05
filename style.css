@@ -168,7 +168,7 @@ figcaption {
 }
 
 /* Rodapé */
-/* Footer que aparece suavemente ao chegar no final */
+/* Footer que aparece suavemente ao chegar no final mais limpo */
 footer {
   position: relative;
   bottom: -100px; /* começa escondido */
