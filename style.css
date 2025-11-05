@@ -1,4 +1,4 @@
-/* Variáveis CSS para a simulação de textura de madeira */
+/* Variáveis CSS para a simulação de textura de madeira - tá massa*/
 :root {
     /* Tema Claro (Simulação de Madeira Clara Amarelada) */
     --cor-fundo-principal: #f5e6a8; /* Amarelo claro/bege */
@@ -478,7 +478,7 @@ section {
 }
 
 .play-pause-btn {
-    font-size: 1.8em;
+    font-size: 15px;
 }
 
 /* Barra de Progresso */
