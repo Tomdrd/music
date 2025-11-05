@@ -168,21 +168,9 @@ figcaption {
 }
 
 /* Rodapé */
-footer {
-    background-color: var(--cor-fundo-secundario);
-    color: var(--cor-texto-principal);
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-      bottom: -100px; /* começa escondido */
-  left: 0;
-  width: 100%;
-}
-
 /* Footer que aparece suavemente ao chegar no final */
 footer {
-  position: fixed;
+  position: relative;
   bottom: -100px; /* começa escondido */
   left: 0;
   width: 100%;
