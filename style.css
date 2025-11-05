@@ -58,7 +58,7 @@ body {
     /* 🎨 DESTAQUE DO CONTAINER */
     background-color: var(--cor-fundo-secundario); /* Fundo secundário */
     border: 1px solid var(--cor-fundo-secundario); /* Borda sutil */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 20px; /* Bordas arredondadas */
     /* FIM DO DESTAQUE */
 }
 
